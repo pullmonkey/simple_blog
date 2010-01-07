@@ -1,0 +1,16 @@
+<% form_for(@post) do |f| -%>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  
+  <p>
+    <%= f.submit "Save" %>
+  </p>
+<% end -%>

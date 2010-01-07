@@ -1,11 +1,4 @@
-<h1>Posts</h1>
-<% @posts.each do |post| %>
-  <h2><%= h post.subject %></h2>
-  <%= post.body %>
-  <h3>Comments</h3>
-  <% post.comments.each do |comment| %>
-    <b>by <%= comment.username %></b><br/>
-    <%= comment.body %><br/>
-    <br/>
-  <% end %>
-<% end %>
+<%= render :partial => 'post', :collection => @posts %>
+
+<br/>
+<%= admin_new_post_link %>

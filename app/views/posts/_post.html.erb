@@ -1,0 +1,15 @@
+<div id="blog_entry">
+  <h2><span class="name"><%= h post.subject %></span> <%= admin_edit_post_links(post) %></h2>
+  <span class="date">posted: <%= post.created_at %></span>
+  <p><%= markdown(post.body) %></p>
+  <hr/>
+  <h3>Comments</h3>
+  <% post.comments.each do |comment| -%>
+    <div id="comment_entry">
+      <b style="color:white;">by <%= comment.username %></b><br/>
+      <%= comment.body %> <%= link_to "Delete", [post, comment], :method => :delete, :confirm => "Are you sure?" %><br/>
+      <br/>
+    </div>
+  <% end -%>
+  <%= link_to "Post New Comment", new_post_comment_path(post) %>
+</div>

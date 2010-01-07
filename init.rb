@@ -1,4 +1,4 @@
-require 'application'
+require 'application_controller'
 
 ApplicationController.prepend_view_path(File.join(File.dirname(__FILE__), 'app', 'views'))
 
